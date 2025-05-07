@@ -13,7 +13,7 @@ This repository contains a Jenkins pipeline for building, testing, and packaging
     - JaCoCo Plugin (optional, for code coverage visualization).
   - Configure a JDK named `JDK` in `Manage Jenkins > Global Tool Configuration`.
 - **Repository**:
-  - The repository is hosted at `https://github.com/malleswar-reddy/WebFluxTodo.git`.
+  - The repository is hosted at `https://github.com/my-repositories/WebFluxTest.git`.
   - Ensure the `devlop` branch exists (or update to `develop` if renamed).
 - **Gradle**:
   - The repository includes a Gradle wrapper (`gradlew`). Ensure it’s executable (`chmod +x gradlew`).
@@ -24,7 +24,7 @@ This repository contains a Jenkins pipeline for building, testing, and packaging
 The Jenkins pipeline (`Jenkinsfile`) performs the following stages:
 
 1. **Checkout**:
-   - Clones the `devlop` branch from `https://github.com/malleswar-reddy/WebFluxTodo.git`.
+   - Clones the `devlop` branch from `https://github.com/my-repositories/WebFluxTest.git`.
 2. **Build**:
    - Runs `./gradlew clean build -x test --no-daemon` to build the project without running tests.
 3. **Test**:
@@ -42,7 +42,7 @@ The Jenkins pipeline (`Jenkinsfile`) performs the following stages:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/malleswar-reddy/WebFluxTodo.git
+   git clone https://github.com/my-repositories/WebFluxTest.git
    cd WebFluxTodo
    ```
 
@@ -52,7 +52,7 @@ The Jenkins pipeline (`Jenkinsfile`) performs the following stages:
      - In the **Pipeline** section, set:
        - **Definition**: Pipeline script from SCM.
        - **SCM**: Git.
-       - **Repository URL**: `https://github.com/malleswar-reddy/WebFluxTodo.git`.
+       - **Repository URL**: `https://github.com/my-repositories/WebFluxTest.git`.
        - **Branch Specifier**: `*/devlop`.
        - **Script Path**: `Jenkinsfile`.
      - Save the configuration.
@@ -67,12 +67,12 @@ The Jenkins pipeline (`Jenkinsfile`) performs the following stages:
 Below is an example of the expected pipeline execution in Jenkins:
 
 ```
-Started by user Malleswar Reddy
+Started by user JenkinsUser
 [Pipeline] Start of Pipeline
 [Pipeline] node
 Running on Jenkins in /var/lib/jenkins/workspace/WebFluxTodo
 [Pipeline] stage (Checkout)
-Fetching changes from https://github.com/malleswar-reddy/WebFluxTodo.git
+Fetching changes from https://github.com/my-repositories/WebFluxTest.git
 Checking out branch devlop
 [Pipeline] stage (Build)
 Executing: ./gradlew clean build -x test --no-daemon
@@ -99,7 +99,7 @@ Finished: SUCCESS
 - **Branch Not Found**:
   - Ensure the `devlop` branch exists. Check with:
     ```bash
-    git ls-remote https://github.com/malleswar-reddy/WebFluxTodo.git
+    git ls-remote https://github.com/my-repositories/WebFluxTest.git
     ```
   - If using `develop`, create and push it:
     ```bash
@@ -123,7 +123,7 @@ Finished: SUCCESS
 - [JaCoCo Plugin for Jenkins](https://plugins.jenkins.io/jacoco/)
 - [HTML Publisher Plugin](https://plugins.jenkins.io/htmlpublisher/)
 - [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
-- [WebFluxTodo Repository](https://github.com/malleswar-reddy/WebFluxTodo.git)
+- [WebFluxTodo Repository](https://github.com/my-repositories/WebFluxTest.git)
 
 ## License
 
